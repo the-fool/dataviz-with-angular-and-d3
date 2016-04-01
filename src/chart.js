@@ -30,7 +30,8 @@
       svg.append('g').attr('class', 'x-axis axis');
       svg.append('g').attr('class', 'y-axis axis');
 
-      var width = 600, height 300;
+      var width = 600,
+          height = 300;
 
       return postLink;
 
