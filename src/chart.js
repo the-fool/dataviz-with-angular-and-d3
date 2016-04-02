@@ -51,8 +51,8 @@
 
         var xScale = d3.time.scale()
           .domain([
-            d3.min(data, function(d) { return d.time; }),
-            d3.max(data, function(d) { return d.time; })
+            d3.min(data, function(d) { return (d.time); }),
+            d3.max(data, function(d) { return (d.time); })
           ])
           .range([margin, width - margin]);
 
@@ -79,6 +79,17 @@
         svg.select('.y-axis')
           .attr("transform", "translate(" + margin + ")")
           .call(yAxis);
+
+        svg.select('.data')
+          .selectAll('circle').data(data)
+          .enter()
+          .append('circle');
+
+        svg.select('.data')
+          .selectAll('circle').data(data)
+          .attr('r', 2.5)
+          .attr('cx', function(d) { return xScale( new Date(d.time));})
+          .attr('cy', function(d) { return yScale(d.visitors);});
 
       }
     }
