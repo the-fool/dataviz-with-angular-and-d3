@@ -18,7 +18,7 @@ function MainCtrl($scope, $interval)
 
   $scope.logs = [randPoint()];
 
-  $interval( () =>
+  $interval( function()
   {
     time.setSeconds(time.getSeconds() + 1);
     $scope.logs.push(randPoint());
