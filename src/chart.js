@@ -8,12 +8,12 @@
     {
       return d3;
     })
-    .service('SimpleD3Loader,' ["d3", function(d3)
+    .service('SimpleD3Loader', function(d3)
     {
       return function(url, callback) {
         d3.text(url, 'text/plain', callback);
       };
-    }])
+    })
     .directive('myScatterChart', myScatterChart);
 
   function myScatterChart(d3)
